@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        min-width: 357px;
+        overflow-x: hidden;
+      }
+
+      img {
+        margin: 5px;
+        border: 2px solid black;
+        vertical-align: middle;
+        width: 75px;
+        height: 75px;
+      }
+    </style>
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/popup.js"></script>
+  </head>
+  <body>
+    <div>
+      <h3 id='username'>Username</h3>
+    </div>
+    <div>
+      <span id='error'></span>
+    </div>
+    <div>
+      <p>I own <span id='num-issues'>#</span> copies of this issue</p>
+      <button type="button" id="add-issue">Add Issue</button>
+    </div>
+  </body>
+</html>
