@@ -1,12 +1,15 @@
+// var comics_url = 'http://localhost:3000/';
+var comics_url = 'http://comics.sleekcoder.com/';
+
 function save_options() {
   var token = document.getElementById("token").value;
   var username = '';
 
-  $.getJSON('http://localhost:3000/get_username.json?token=' + token, function(data) {
+  $.getJSON(comics_url + 'get_username.json?token=' + token, function(data) {
     username = data.username;
   });
 
-  chrome.storage.sync.set({'token': token}, function() {
+  chrome.storage.sync.set({'token': token, 'username': username}, function() {
     var status = document.getElementById("status");
     status.innerHTML = "Token Saved.";
     setTimeout(function() {
@@ -21,7 +24,7 @@ function show_username() {
   chrome.storage.sync.get('token', function(result) {
     var token = result.token;
     var username = '';
-    $.getJSON('http://localhost:3000/get_username.json?token=' + token, function(data) {
+    $.getJSON(comics_url + 'get_username.json?token=' + token, function(data) {
       username = data.username;
       $('#username').text(username);
     });

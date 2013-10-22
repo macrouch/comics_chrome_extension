@@ -1,3 +1,6 @@
+// var comics_url = 'http://localhost:3000/';
+var comics_url = 'http://comics.sleekcoder.com/';
+
 function clickHandler(element) {
   var issue_id = '';
   chrome.tabs.query({active: true, currentWindow: true}, function(tab) {
@@ -6,7 +9,7 @@ function clickHandler(element) {
 
     chrome.storage.sync.get('token', function(result) {
       var token = result.token;
-      $.post('http://localhost:3000/add_issue', 'token=' + token + '&id=' + issue_id)
+      $.post(comics_url + 'add_issue', 'token=' + token + '&id=' + issue_id)
         .fail(function(json) {
           $('#error').text(json.responseJSON.error);
         })
@@ -26,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var url = tab[0].url;
       issue_id = url.replace('http://www.comicvine.com/', '').split('/')[1].split('-')[1];
 
-      $.getJSON('http://localhost:3000/get_number_of_issues.json?token=' + token + '&issue_id=' + issue_id, function(data) {
+      $.getJSON(comics_url + 'get_number_of_issues.json?token=' + token + '&issue_id=' + issue_id, function(data) {
         $('#num-issues').text(data.number);
       });
 
