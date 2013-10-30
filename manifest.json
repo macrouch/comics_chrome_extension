@@ -3,12 +3,13 @@
 
   "name": "Comics Adder",
   "description": "This extension demonstrates a browser action with kittens.",
-  "version": "1.0",
+  "version": "1.1",
   "web_accessible_resources": ["js/jquery-2.0.3.min.js", "js/jquery-2.0.3.min.map"],
-  "background": { "scripts": ["js/background.js"] },
+  "background": { "scripts": ["js/jquery-2.0.3.min.js", "js/jquery-2.0.3.min.map", "js/background.js"] },
   "permissions": [
     "tabs",
     "storage",
+    "contextMenus",
     "http://www.comicvine.com/",
     "http://localhost:3000/",
     "http://comics.sleekcoder.com/"

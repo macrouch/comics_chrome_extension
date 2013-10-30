@@ -16,7 +16,7 @@ function clickHandler(element) {
         .success(function(json) {
           $('#num-issues').text(json.num_issues);
         });
-    })
+    });
   });
 }
 
