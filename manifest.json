@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Comics Adder",
-  "description": "This extension demonstrates a browser action with kittens.",
+  "description": "This extension allows you to add comics to your collection at http://comics.sleekcoder.com",
   "version": "1.1",
   "web_accessible_resources": ["js/jquery-2.0.3.min.js", "js/jquery-2.0.3.min.map"],
   "background": { "scripts": ["js/jquery-2.0.3.min.js", "js/background.js"] },
