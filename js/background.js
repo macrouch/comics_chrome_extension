@@ -18,7 +18,7 @@ chrome.tabs.onUpdated.addListener(checkForValidUrl);
 // Context menu for adding variant covers
 function contextHandler(e) {
   var url = e.pageUrl;
-  issue_id = url.replace('http://www.comicvine.com/', '').split('/')[1].split('-')[1];
+  issue_id = url.replace('http://www.comicvine.com/', '').split('/')[1]; //.split('-')[1];
   image_url = e.srcUrl;
 
   chrome.runtime.sendMessage({type: 'request_name'});

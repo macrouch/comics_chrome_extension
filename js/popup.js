@@ -5,7 +5,7 @@ function clickHandler(element) {
   var issue_id = '';
   chrome.tabs.query({active: true, currentWindow: true}, function(tab) {
     var url = tab[0].url;
-    issue_id = url.replace('http://www.comicvine.com/', '').split('/')[1].split('-')[1];
+    issue_id = url.replace('http://www.comicvine.com/', '').split('/')[1]; //.split('-')[1];
 
     chrome.storage.sync.get('token', function(result) {
       var token = result.token;
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var token = result.token;
       
       var url = tab[0].url;
-      issue_id = url.replace('http://www.comicvine.com/', '').split('/')[1].split('-')[1];
+      issue_id = url.replace('http://www.comicvine.com/', '').split('/')[1]; //.split('-')[1];
 
       $.getJSON(comics_url + 'get_number_of_issues.json?token=' + token + '&issue_id=' + issue_id, function(data) {
         $('#num-issues').text(data.number);
