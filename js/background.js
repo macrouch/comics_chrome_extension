@@ -19,7 +19,7 @@ chrome.tabs.onUpdated.addListener(checkForValidUrl);
 function contextHandler(e) {
   var url = e.pageUrl;
   issue_id = url.replace('http://www.comicvine.com/', '').split('/')[1]; //.split('-')[1];
-  image_url = e.srcUrl;
+  image_url = encodeURIComponent(e.srcUrl);
 
   chrome.runtime.sendMessage({type: 'request_name'});
 };
