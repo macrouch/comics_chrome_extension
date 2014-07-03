@@ -2,7 +2,7 @@
 var comics_url = 'http://comics.sleekcoder.com/';
 
 var issue_id = '';
-var image_url = ''
+var image_url = '';
 
 // Called when the url of a tab changes.
 function checkForValidUrl(tabId, changeInfo, tab) {
@@ -18,7 +18,7 @@ chrome.tabs.onUpdated.addListener(checkForValidUrl);
 // Context menu for adding variant covers
 function contextHandler(e) {
   var url = e.pageUrl;
-  issue_id = url.replace('http://www.comicvine.com/', '').split('/')[1]; //.split('-')[1];
+  issue_id = url.replace('http://www.comicvine.com/', '').split('/')[1];
   image_url = encodeURIComponent(e.srcUrl);
 
   chrome.runtime.sendMessage({type: 'request_name'});
