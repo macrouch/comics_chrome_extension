@@ -1,6 +1,3 @@
-// var comics_url = 'http://localhost:3000/';
-var comics_url = 'http://comics.sleekcoder.com/';
-
 var issue_id = '';
 var image_url = '';
 
@@ -22,19 +19,6 @@ function contextHandler(e) {
   image_url = encodeURIComponent(e.srcUrl);
 
   chrome.runtime.sendMessage({type: 'request_name'});
-};
-
-function addVariant(name) {
-  chrome.storage.sync.get('token', function(result) {
-      var token = result.token;
-      $.post(comics_url + 'add_variant', 'token=' + token + '&id=' + issue_id + '&image=' + image_url + '&name=' + name)
-        .fail(function(json) {
-          alert(json.responseJSON.error);
-        })
-        .success(function(json) {
-          alert('Success, you now have ' + json.num_issues + ' issues');
-        });
-    });
 };
 
 chrome.contextMenus.create({

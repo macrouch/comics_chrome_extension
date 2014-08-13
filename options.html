@@ -2,18 +2,27 @@
 <head>
   <title>Comic Adder Options</title>
   <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
-  </head>
+  <script type="text/javascript" src="js/requests.js"></script>
+
+  <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
 <body>
+  <div class="container">
+    <h1>Comic Adder Options</h1>
+    <p>
+      <label for='token'>Comics Token: (<a href="http://comics.sleekcoder.com/" target="_blank">Generate Here</a>)</label>
+      <input id='token' type='text' />
+    </p>
 
-  <label for='token'>Comics Token:</label>
-  <input id='token' type='text' />
+    <p id="status"></p>
 
-  <br>
-  <div id="status"></div>
-  <button id="save">Save</button>
+    <p>
+      <button id="save" class="btn btn-primary">Save</button>
+    </p>
 
-  <div>
-    <p>Logged in as <span id='username'></span></p>
+    <p>
+      Logged in as <strong><span id='username'></span></strong>
+    </p>
   </div>
 
   <script src="js/options.js"></script>
