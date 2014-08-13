@@ -3,7 +3,7 @@
 
   "name": "Comics Adder",
   "description": "This extension allows you to add comics to your collection at http://comics.sleekcoder.com",
-  "version": "1.5",
+  "version": "1.5.1",
   "background": { "scripts": ["js/jquery-2.0.3.min.js", "js/background.js"] },
   "permissions": [
     "tabs",
