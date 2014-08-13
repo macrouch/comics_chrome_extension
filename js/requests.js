@@ -44,7 +44,7 @@ function get_username() {
 
 
     chrome.storage.sync.set({'username': username}, function() {
-      alert("set username as " + username)
+
     });
   });
 };
