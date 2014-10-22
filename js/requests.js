@@ -49,17 +49,17 @@ function get_username() {
   });
 };
 
-function addVariant(name) {
+function addVariant(name, issue_id, image_url) {
   chrome.storage.sync.get('token', function(result) {
-      var token = result.token;
-      $.post(comics_url + 'add_variant', 'token=' + token + '&id=' + issue_id + '&image=' + image_url + '&name=' + name)
-        .fail(function(json) {
-          alert(json.responseJSON.error);
-        })
-        .success(function(json) {
-          alert('Success, you now have ' + json.num_issues + ' issues');
-        });
-    });
+    var token = result.token;
+    $.post(comics_url + 'add_variant', 'token=' + token + '&id=' + issue_id + '&image=' + image_url + '&name=' + name)
+      .fail(function(json) {
+        alert(json.responseJSON.error);
+      })
+      .success(function(json) {
+        alert('Success, you now have ' + json.num_issues + ' issues');
+      });
+  });
 };
 
 function addIssue(issue_id) {
