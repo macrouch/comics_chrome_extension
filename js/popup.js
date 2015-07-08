@@ -18,12 +18,17 @@ function clickHandler(element) {
       issue_id = url.replace('http://www.comicvine.com/', '').split('/')[1];
 
       addIssue(issue_id);
+    } else if (element.toElement.id == 'add-collected-edition') {
+      collected_edition_id = url.replace('http://www.comicvine.com/', '').split('/')[1];
+
+      addCollectedEdition(collected_edition_id);
     }
   });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('#add-issue').addEventListener('click', clickHandler);
+  document.querySelector('#add-collected-edition').addEventListener('click', clickHandler);
   document.querySelector('#add-volume').addEventListener('click', clickHandler);
   document.querySelector('#remove-volume').addEventListener('click', clickHandler);
 

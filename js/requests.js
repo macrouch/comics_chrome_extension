@@ -75,6 +75,15 @@ function addIssue(issue_id) {
   });
 };
 
+function addCollectedEdition(issue_id) {
+  chrome.storage.sync.get('token', function(result) {
+    var token = result.token;
+
+    var url = comics_url + 'add_collected_edition?token=' + token + '&id=' + issue_id
+    chrome.tabs.create({url: url});
+  });
+};
+
 function addVolume(volume_id) {
   chrome.storage.sync.get('token', function(result) {
     var token = result.token;
